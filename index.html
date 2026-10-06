@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SWIR 論文導讀 · 10/08 研究報告</title>
-<meta name="description" content="參考簡報設計原則重寫的 SWIR 偏振成像 19 頁簡報內文與研究重點。">
+<meta name="description" content="參考簡報設計原則重寫的 SWIR 偏振成像 20 頁簡報內文與研究重點。">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23704a2c'/%3E%3Cpath d='M9 7h14v4H9zm0 7h14v4H9zm0 7h14v4H9z' fill='%23d7aa45'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css"></head><body>
 <a class="skip" href="#main">跳至正文</a>
 <header><div class="masthead"><a class="brand" href="#main">SWIR / PAPER REVIEW</a><span>2026.10.08 · 實驗室報告</span></div></header>
-<div class="layout"><aside><details class="toc" open><summary>頁面導覽</summary><nav aria-label="簡報導覽"><a class="level-2" href="#section-1">01｜封面</a><a class="level-2" href="#section-2">02｜SWIR 看見了什麼？</a><a class="level-2" href="#section-3">03｜研究問題</a><a class="level-2" href="#section-4">04｜用四個 Stokes 參數描述偏振</a><a class="level-2" href="#section-5">05｜硬體：微偏振片陣列貼合 SWIR 感測器</a><a class="level-2" href="#section-6">06｜完整 Stokes 需要兩張影像</a><a class="level-2" href="#section-7">07｜校正支持量測趨勢</a><a class="level-2" href="#section-8">08｜室內材料：先看 SWIR 強度差異</a><a class="level-2" href="#section-9">09｜熱板照明：透明物件的多次反射</a><a class="level-2" href="#section-10">10｜全反射可產生圓偏振分量</a><a class="level-2" href="#section-11">11｜青銅雕像：表面方向與天空反射</a><a class="level-2" href="#section-12">12｜第二座雕像：場景差異不可忽略</a><a class="level-2" href="#section-13">13｜玻璃窗：偏振條紋與殘留應力相符</a><a class="level-2" href="#section-14">14｜玻璃透射與反射：先交代光路</a><a class="level-2" href="#section-15">15｜結果總覽：影像看見現象，尚未完成定量辨識</a><a class="level-2" href="#section-16">16｜證據界線</a><a class="level-2" href="#section-17">17｜三個 takeaways</a><a class="level-2" href="#section-18">18｜下一步：用免費光學工具先驗證偏振光路</a><a class="level-2" href="#section-19">19｜參考文獻與圖像來源</a></nav></details></aside>
-<main id="main"><div class="intro"><p class="eyebrow">IMRaD · Scientific Reports · 2025</p><h1>看見光穿過材料之後</h1><p class="lead">短波紅外偏振成像｜論文導讀</p><p>19 頁簡報 · 2026.10.08 · 結果與討論為主軸</p><div class="downloads"><a class="download" href="swir-paper-review-redesigned.pptx" download>下載可編輯 PPTX</a><a class="download secondary" href="draft.md" download>下載逐頁內文</a></div></div><p>依據《HELP_20230420_Slidetips》採用「一頁一個訊息、先講結論、圖像帶路、文字留白」原則。詳細口頭講稿收錄於可編輯 PPTX 的每頁備忘稿。</p>
-<p>報告日期：2026/10/08　｜　共 19 頁　｜　結果與討論：第 7–16 頁</p>
+<div class="layout"><aside><details class="toc" open><summary>頁面導覽</summary><nav aria-label="簡報導覽"><a class="level-2" href="#section-1">01｜封面</a><a class="level-2" href="#section-2">02｜SWIR 看見了什麼？</a><a class="level-2" href="#section-3">03｜研究問題</a><a class="level-2" href="#section-4">04｜用四個 Stokes 參數描述偏振</a><a class="level-2" href="#section-5">05｜硬體：微偏振片陣列貼合 SWIR 感測器</a><a class="level-2" href="#section-6">06｜完整 Stokes 需要兩張影像</a><a class="level-2" href="#section-7">07｜校正支持量測趨勢</a><a class="level-2" href="#section-8">08｜室內材料：先看 SWIR 強度差異</a><a class="level-2" href="#section-9">09｜室內材料偏振圖：方向、線偏振與圓偏振各有線索</a><a class="level-2" href="#section-10">10｜熱板照明：透明物件的多次反射</a><a class="level-2" href="#section-11">11｜全反射可產生圓偏振分量</a><a class="level-2" href="#section-12">12｜青銅雕像：表面方向與天空反射</a><a class="level-2" href="#section-13">13｜第二座雕像：場景差異不可忽略</a><a class="level-2" href="#section-14">14｜玻璃窗：偏振條紋與殘留應力相符</a><a class="level-2" href="#section-15">15｜玻璃透射與反射：先交代光路</a><a class="level-2" href="#section-16">16｜結果總覽：影像看見現象，尚未完成定量辨識</a><a class="level-2" href="#section-17">17｜證據界線</a><a class="level-2" href="#section-18">18｜三個 takeaways</a><a class="level-2" href="#section-19">19｜下一步：用免費光學工具先驗證偏振光路</a><a class="level-2" href="#section-20">20｜參考文獻與圖像來源</a></nav></details></aside>
+<main id="main"><div class="intro"><p class="eyebrow">IMRaD · Scientific Reports · 2025</p><h1>看見光穿過材料之後</h1><p class="lead">短波紅外偏振成像｜論文導讀</p><p>20 頁簡報 · 2026.10.08 · 結果與討論為主軸</p><div class="downloads"><a class="download" href="swir-paper-review-redesigned.pptx" download>下載可編輯 PPTX</a><a class="download secondary" href="draft.md" download>下載逐頁內文</a></div></div><p>依據《HELP_20230420_Slidetips》採用「一頁一個訊息、先講結論、圖像帶路、文字留白」原則。詳細口頭講稿收錄於可編輯 PPTX 的每頁備忘稿。</p>
+<p>報告日期：2026/10/08　｜　共 20 頁　｜　結果與討論：第 7–17 頁</p>
 <section id="section-1" class="content-section"><h2>01｜封面</h2>
 <p><strong>看見光穿過材料之後</strong><br>焦平面分割式短波紅外偏振儀的量測與案例</p>
 <p>Hamdoh et al. · <em>Scientific Reports</em> · 2025<br>報告人：[姓名]　指導教授：[姓名]　實驗室：[單位]　報告日期：2026.10.08</p>
@@ -57,40 +57,49 @@
 </section>
 <section id="section-8" class="content-section"><h2>08｜室內材料：先看 SWIR 強度差異</h2>
 <p><strong>先問：哪些光穿過了材料？</strong></p>
-<p>作者比較塑膠、矽片、玻璃與金屬等物件的 S₀ 與偏振圖。暗不等於已證實強吸收；反射、透射與曝光條件都會影響亮度。</p>
+<p>綠／藍塑膠、黑玻璃、矽片與油可透過 SWIR；鋁、木材與水在影像中較暗。黑曜石雖在可見光呈黑色，於 SWIR 卻可透光。亮暗會受反射、透射與曝光影響，不能直接當成吸收係數。</p>
 <p>圖：論文 Fig. 3。</p>
 </section>
-<section id="section-9" class="content-section"><h2>09｜熱板照明：透明物件的多次反射</h2>
+<section id="section-9" class="content-section"><h2>09｜室內材料偏振圖：方向、線偏振與圓偏振各有線索</h2>
+<ul>
+<li><strong>AoLP｜方向：</strong>線偏振片約 115°；圓偏振片約 55°；黑曜石表面角度分布廣。</li>
+<li><strong>DoLP｜線偏振比例：</strong>線偏振片約 0.66；可透 SWIR 的塑膠、玻璃與矽片低於 0.05。</li>
+<li><strong>DoCP｜圓偏振分量：</strong>只有圓偏振片呈現明顯的透射 DoCP。</li>
+</ul>
+<p><strong>黑色 AoLP 區代表 DoLP 為零、角度未定義；不等於另一個有效角度。</strong></p>
+<p>圖：論文 Fig. 3。數值為本文此組實驗觀察，不是通用材料分類門檻。</p>
+</section>
+<section id="section-10" class="content-section"><h2>10｜熱板照明：透明物件的多次反射</h2>
 <p><strong>158°C 熱板提供 SWIR 熱輻射</strong></p>
 <p>稜鏡與玻璃球呈現不同線偏振分布；作者以物體表面的多次反射解釋局部偏振圖樣。這是定性觀察。</p>
 <p>圖：論文 Fig. 4。</p>
 </section>
-<section id="section-10" class="content-section"><h2>10｜全反射可產生圓偏振分量</h2>
+<section id="section-11" class="content-section"><h2>11｜全反射可產生圓偏振分量</h2>
 <p>入射角高於臨界角時，s、p 分量反射後可能累積相位差。作者在特定區域觀察到 DoCP，並以物體內部全反射解釋。</p>
 <p><strong>DoCP ≠ 0 表示存在圓偏振分量，不代表光完全圓偏振。</strong></p>
 <p>機制概念示意；實測案例見論文 Fig. 4。</p>
 </section>
-<section id="section-11" class="content-section"><h2>11｜青銅雕像：表面方向與天空反射</h2>
+<section id="section-12" class="content-section"><h2>12｜青銅雕像：表面方向與天空反射</h2>
 <p><strong>Wildcat Family　｜　DoLP 約可達 0.55</strong></p>
 <p>觀察值同時受表面形貌、光照方向、天空偏振與拍攝姿態影響，不宜簡化成單一「青銅材質指紋」。</p>
 <p>圖：論文 Fig. 5。</p>
 </section>
-<section id="section-12" class="content-section"><h2>12｜第二座雕像：場景差異不可忽略</h2>
+<section id="section-13" class="content-section"><h2>13｜第二座雕像：場景差異不可忽略</h2>
 <p>比較偏振影像時需記錄：<strong>表面形貌、入射方向、相機姿態</strong>。</p>
 <p>場景差異不等於單純材料差異；若要做辨識，需控制或記錄這些變因。</p>
 <p>圖：論文 Fig. 6。</p>
 </section>
-<section id="section-13" class="content-section"><h2>13｜玻璃窗：偏振條紋與殘留應力相符</h2>
+<section id="section-14" class="content-section"><h2>14｜玻璃窗：偏振條紋與殘留應力相符</h2>
 <p><strong>週期性條紋出現在 DoLP 與 DoCP 圖</strong></p>
 <p>作者將其解釋為玻璃製程中的內部應力造成雙折射。相位延遲與折射率差、厚度和波長相關；本文沒有建立應力定量反演。</p>
 <p>圖：論文 Fig. 8。</p>
 </section>
-<section id="section-14" class="content-section"><h2>14｜玻璃透射與反射：先交代光路</h2>
+<section id="section-15" class="content-section"><h2>15｜玻璃透射與反射：先交代光路</h2>
 <p>透射可能包含雙折射與殘留應力；反射則混合環境光與窗面反射。</p>
 <p><strong>拍攝位置、入射方向與觀察角度會改變偏振訊號。</strong></p>
 <p>圖：論文玻璃窗案例；比較解讀需明確註明拍攝幾何。</p>
 </section>
-<section id="section-15" class="content-section"><h2>15｜結果總覽：影像看見現象，尚未完成定量辨識</h2>
+<section id="section-16" class="content-section"><h2>16｜結果總覽：影像看見現象，尚未完成定量辨識</h2>
 <div class="table-scroll" tabindex="0" role="region" aria-label="資料表"><table>
 <thead>
 <tr><th scope="col">案例</th><th scope="col">主要觀察</th><th scope="col">指標</th></tr>
@@ -103,11 +112,11 @@
 </tbody></table></div>
 <p>下一步需補上：<strong>標準樣品 × 控制變因 × 量化真值</strong>。</p>
 </section>
-<section id="section-16" class="content-section"><h2>16｜證據界線</h2>
+<section id="section-17" class="content-section"><h2>17｜證據界線</h2>
 <p><strong>支持</strong>　緊湊型 SWIR DoFP 可取得偏振影像；校正條件下量測追隨輸入。<br><strong>顯示</strong>　若干材料與場景具有不同強度及偏振圖樣。<br><strong>尚未證明</strong>　分類效能、普遍材料指紋、玻璃應力定量反演。</p>
 <p>低訊號與兩次曝光是實作上需特別驗證的條件。</p>
 </section>
-<section id="section-17" class="content-section"><h2>17｜三個 takeaways</h2>
+<section id="section-18" class="content-section"><h2>18｜三個 takeaways</h2>
 <ol>
 <li>本文相機的量測範圍是 <strong>0.9–1.7 μm</strong>。</li>
 <li>DoFP 可取得線偏振；完整 Stokes 需 <strong>兩次拍攝＋QWP</strong>。</li>
@@ -115,7 +124,7 @@
 </ol>
 <p><strong>本篇貢獻：儀器實作、校正與現象示範。</strong></p>
 </section>
-<section id="section-18" class="content-section"><h2>18｜下一步：用免費光學工具先驗證偏振光路</h2>
+<section id="section-19" class="content-section"><h2>19｜下一步：用免費光學工具先驗證偏振光路</h2>
 <p><strong>規劃中：Mitsuba 3</strong>　免費開源，支援偏振追跡與 Stokes 分析。</p>
 <ol>
 <li>建立基礎光路：光源 → 樣品 → 偏振分析器 → 相機。</li>
@@ -124,7 +133,7 @@
 </ol>
 <p>需驗證材料光學常數、SWIR 波長設定與偏振元件模型；模擬不能取代實驗校正。先做可重現模擬，再與論文受控案例比對。</p>
 </section>
-<section id="section-19" class="content-section"><h2>19｜參考文獻與圖像來源</h2>
+<section id="section-20" class="content-section"><h2>20｜參考文獻與圖像來源</h2>
 <p>Hamdoh, A. et al. (2025). “Short-wave infrared (SWIR) polarization imaging using division-of-focal-plane imaging polarimeter.” <em>Scientific Reports</em>, 15, 22577.<br><a href="https://doi.org/10.1038/s41598-025-06757-5" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41598-025-06757-5</a></p>
 <p>投影片中的研究數據與案例影像均取自該文；概念示意圖已標示為示意圖。</p>
 </section><footer>Hamdoh et al. (2025) · DOI: <a href="https://doi.org/10.1038/s41598-025-06757-5">10.1038/s41598-025-06757-5</a><br>內容依論文與簡報重寫稿整理；模擬為下一階段規劃，非已完成實驗。</footer></main></div>
