@@ -417,27 +417,26 @@
 </ul>
 </section>
 <section id="section-29" class="content-section"><h2>七、以光學模擬軟體建立實驗架構</h2>
-<p><strong>目標</strong>：用光學軟體建立光源、樣品、QWP、成像鏡頭與偏振分析／偵測器的光路，執行帶偏振的光線追跡，再由各分析方向的強度重建 Stokes 與偏振指標。此處是建模規劃，尚未產生或執行商用軟體模型；軟體與授權待確認。</p>
+<p><strong>目標</strong>：用免費開源光學工具建立光源、樣品、QWP、成像鏡頭與偏振分析／偵測器的光路，執行帶偏振的光線追跡，再由各分析方向的強度重建 Stokes 與偏振指標。此處是建模規劃，尚未安裝或執行模擬工具，也尚未產生經驗證的模型檔。選型限制為個人免費使用。</p>
 </section>
 <section id="section-30" class="content-section"><h2>建模方式與軟體選擇</h2>
-<p><strong>本研究的選型建議</strong>：優先選擇有非序列與偏振功能授權的 Zemax OpticStudio，先做成像光路與全反射驗證；若實驗室已持有 TracePro，可直接使用其 Stokes／Mueller 模型完成偏振光線追跡。LightTools 在已有相應偏振模組且熟悉操作時也是可行方案。此建議依官方功能與研究需求推論，並非三套軟體性能實測排名；購買前需確認實際授權及版本。</p>
+<p><strong>免費選型建議</strong>：以 Mitsuba 3 作為偏振成像模擬的優先候選。它採開源授權、支援 Windows、Python 場景建立與偏振光傳輸，具有偏振片、相位延遲片、介電質／金屬表面，以及 Stokes 輸出。此選擇依官方功能與本研究需求推論，尚未實測本研究模型。</p>
 <ul>
-<li>OpticStudio：本研究優先候選，適合將成像鏡頭分析與非序列多次反射結合。</li>
-<li>TracePro：若偏重照明、材料表面及 Stokes／Mueller 光線追跡，可列為主要替代方案。</li>
-<li>LightTools：若已有照明分析工作流程，且具相關偏振／雙折射模組，可沿用。</li>
+<li><strong>Mitsuba 3</strong>：較符合偏振影像與 S0–S3 輸出的需求，但主要透過 Python／XML 建模，沒有商用光學 CAD 那樣的完整操作介面。</li>
+<li><strong>Raypier</strong>：免費開源的非序列光學工具，官方列有偏振、相位、稜鏡、鏡頭及互動3D光路介面；Windows 依賴安裝較複雜，完整偏振成像與 QWP 的模型／匯出流程仍需驗證。</li>
+<li>本次免費方案不以 Zemax、LightTools 或 TracePro 的付費授權作為前提。</li>
 </ul>
-<ul>
-<li>如有 Ansys Zemax OpticStudio 非序列功能，可用非序列模式處理稜鏡內多次反射、全反射與分光；成像鏡頭也可先以序列模式檢查。</li>
-<li>OpticStudio 的偏振分析可使用光線電場資料或偏振分析元件取得資訊；不能把一般 Detector Rectangle 強度圖直接稱為完整 Stokes 圖。</li>
-<li>LightTools 官方說明支援偏振及雙折射分析，但須確認授權版本與相關模組。</li>
-<li>TracePro 官方手冊採 Mueller matrix／Stokes vector 偏振模型，可作另一候選。最終以實驗室現有授權與資料匯出能力決定。</li>
-</ul>
+<p><strong>SWIR 必須額外驗證</strong>：Mitsuba 預設可見光／RGB 輸出不能直接當成0.9–1.7 μm量測。需明確設定 SWIR 波長取樣、光源頻譜、材料光學常數及感測器響應；官方 specfilm 可接受可見光範圍外的感測器響應。其與偏振多通道輸出的组合須先以單波段數值測試，不能只看到彩色圖片就宣稱模擬成功。先以1.3 μm附近窄波段建立測試，驗證採樣波長及數值輸出，再擴充寬頻。</p>
+<p><strong>兩種輸出要分開</strong>：Stokes integrator 可提供模擬光場的參考 S0–S3，但這不等於已模擬 DoFP 相機。量測架構仍需有／無 QWP 的分析影像與2×2取樣重建，最後與參考值比較。</p>
 <p>官方資料：</p>
 <ul>
-<li><a href="https://optics.ansys.com/hc/en-us/articles/42661670424851-Exploring-Non-Sequential-Mode-in-OpticStudio" target="_blank" rel="noopener noreferrer">https://optics.ansys.com/hc/en-us/articles/42661670424851-Exploring-Non-Sequential-Mode-in-OpticStudio</a></li>
-<li><a href="https://optics.ansys.com/hc/en-us/articles/43071115008787-How-do-I-measure-polarization-in-NSC-mode" target="_blank" rel="noopener noreferrer">https://optics.ansys.com/hc/en-us/articles/43071115008787-How-do-I-measure-polarization-in-NSC-mode</a></li>
-<li><a href="https://news.synopsys.com/2020-03-24-Latest-Release-of-LightTools-From-Synopsys-Offers-New-Modeling-and-Analysis-Features-for-Illumination-Design" target="_blank" rel="noopener noreferrer">https://news.synopsys.com/2020-03-24-Latest-Release-of-LightTools-From-Synopsys-Offers-New-Modeling-and-Analysis-Features-for-Illumination-Design</a></li>
-<li><a href="https://lambdares.com/hubfs/TracePro_Users_Manual_2026.pdf" target="_blank" rel="noopener noreferrer">https://lambdares.com/hubfs/TracePro_Users_Manual_2026.pdf</a></li>
+<li><a href="https://github.com/mitsuba-renderer/mitsuba3" target="_blank" rel="noopener noreferrer">https://github.com/mitsuba-renderer/mitsuba3</a></li>
+<li><a href="https://github.com/mitsuba-renderer/mitsuba3/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">https://github.com/mitsuba-renderer/mitsuba3/blob/master/LICENSE</a></li>
+<li><a href="https://mitsuba.readthedocs.io/en/stable/src/key_topics/polarization.html" target="_blank" rel="noopener noreferrer">https://mitsuba.readthedocs.io/en/stable/src/key_topics/polarization.html</a></li>
+<li><a href="https://mitsuba.readthedocs.io/en/stable/src/generated/plugins_bsdfs.html" target="_blank" rel="noopener noreferrer">https://mitsuba.readthedocs.io/en/stable/src/generated/plugins_bsdfs.html</a></li>
+<li><a href="https://mitsuba.readthedocs.io/en/stable/src/generated/plugins_films.html" target="_blank" rel="noopener noreferrer">https://mitsuba.readthedocs.io/en/stable/src/generated/plugins_films.html</a></li>
+<li><a href="https://raypier-optics.readthedocs.io/en/latest/introduction.html" target="_blank" rel="noopener noreferrer">https://raypier-optics.readthedocs.io/en/latest/introduction.html</a></li>
+<li><a href="https://github.com/bryancole/raypier_optics" target="_blank" rel="noopener noreferrer">https://github.com/bryancole/raypier_optics</a></li>
 </ul>
 </section>
 <section id="section-31" class="content-section"><h2>第一階段：量測光路驗證</h2>
