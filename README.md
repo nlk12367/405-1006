@@ -1,8 +1,8 @@
-# SWIR 論文探討與報告稿
+# SWIR 論文導讀與簡報
 
 網站：https://nlk12367.github.io/405-1006/
 
-短波紅外偏振成像論文的 IMRaD 分析、19 頁簡報文字與可展開的口頭講稿，包含數據速查、原文勘誤、問答和未來工作規劃。
+參考簡報設計原則重寫的 19 頁短波紅外偏振成像論文導讀。投影片採一頁一個重點、圖像優先與清楚的證據界線；逐頁口頭講稿收錄在 PPTX 備忘稿。
 
 主要論文：Hamdoh et al. (2025), *Scientific Reports*, 15, 22577. https://doi.org/10.1038/s41598-025-06757-5
 
@@ -12,6 +12,7 @@
 - `styles.css`：桌面、手機及列印版面
 - `script.js`：章節導覽與列印講稿處理
 - `draft.md`：完整原始文字稿
+- `swir-paper-review-redesigned.pptx`：可編輯簡報
 - `.nojekyll`：純靜態網站標記
 
 GitHub Pages 使用 `main` 分支根目錄發布。網站無建置依賴，所有資源使用相對路徑。
